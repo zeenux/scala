@@ -8,7 +8,7 @@ import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.*;
 import org.apache.hadoop.mapreduce.lib.input.*;
 import org.apache.hadoop.util.*;
-import org.apache.commons.logging.*;
+
 import org.apache.hadoop.fs.*;
 import java.io.*;
 import org.apache.hadoop.conf.Configuration;
@@ -27,8 +27,7 @@ public class CustomLineRecordReader
     private LongWritable key = new LongWritable();
     private Text value = new Text();
  
-    private static final Log LOG = LogFactory.getLog(
-            CustomLineRecordReader.class);
+  
  
     /**
      * From Design Pattern, O'Reilly...
@@ -135,9 +134,7 @@ public class CustomLineRecordReader
             // Try again with position = position + line offset,
             // i.e. ignore line and go to next one
             // TODO: Shouldn't it be LOG.error instead ??
-            LOG.info("Skipped line of size " + 
-                    newSize + " at pos "
-                    + (pos - newSize));
+           
         }
  
          
