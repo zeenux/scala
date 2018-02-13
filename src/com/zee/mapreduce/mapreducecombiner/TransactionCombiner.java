@@ -24,11 +24,17 @@ public class TransactionCombiner extends Reducer<Text,Text,Text,Text> {
         double maxUnitPrice=Double.MIN_VALUE;
         long count=0;
         for(Text record:records){
-            String [] recordSplit=records.toString().split("\\|");
+            try
+            {
+                String [] recordSplit=records.toString().split("\\|");
             sumPrice+=Double.valueOf(recordSplit[0]);
             minQuantity=Math.min(minQuantity, Integer.valueOf(recordSplit[1]));
             maxUnitPrice=Math.min(maxUnitPrice, Double.valueOf(recordSplit[2]));
             count+=Long.valueOf(recordSplit[3]);
+            }
+            catch(Exception eex){
+                System.out.println(eex.toString());
+            }
         }
         
         output=sumPrice+"|"+minQuantity+"|"+maxUnitPrice+"|"+count;

@@ -24,7 +24,7 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 public class Driver extends Configured implements Tool {
     
     public static void main(String [] args) throws Exception{
-        int result=ToolRunner.run(new Configuration(), new com.zee.transactionsexample.hadoop.Driver(),args);
+        int result=ToolRunner.run(new Configuration(), new Driver(),args);
         System.exit(result);
     }
     
@@ -47,8 +47,9 @@ public class Driver extends Configured implements Tool {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
         
-        FileInputFormat.addInputPath(job, new Path(""));
-        FileOutputFormat.setOutputPath(job, new Path(""));
+        FileInputFormat.addInputPath(job, new Path("/home/zeenux/DATASETS/Transactions.csv"));
+        double rnd=Math.random();
+        FileOutputFormat.setOutputPath(job, new Path("/home/zeenux/op/FILE_"+rnd));
         return job.waitForCompletion(true)?0:1;
     }
     

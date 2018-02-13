@@ -18,8 +18,14 @@ public class TransactionMapper extends Mapper<LongWritable, Text,Text,Text> {
     
     public void map(LongWritable offset, Text record,Context context) throws IOException, InterruptedException{
         String [] recordSplits=record.toString().split(",");
-        totalPrice=Double.valueOf(recordSplits[3]);
-        output=totalPrice+"|"+recordSplits[6]+"|"+recordSplits[3]+"|1";
+        try{
+            totalPrice=Double.valueOf(recordSplits[3]);
+            output=totalPrice+"|"+recordSplits[6]+"|"+recordSplits[3]+"|1";
         context.write(new Text(recordSplits[4]), new Text(output));
+        }
+        catch(Exception eex){
+            System.out.println(eex.toString());
+        }
+        
     }
 }
