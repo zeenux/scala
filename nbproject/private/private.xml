@@ -3,19 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/customrecordreader/hadoop/CustomDriver.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/customrecordreader/hadoop/CustomMapper.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/mapreduce/wordcount/WordCountMapper.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/mapreduce/wordcount/WordCountDriver.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/customrecordreader/hadoop/CustomReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/transactionsexample/hadoop/SingleRowReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/customrecordreader/hadoop/CustomLineRecordReader.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/transactionsexample/hadoop/Driver.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/customrecordreader/hadoop/CustomFileInputFormat.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/mapreduce/wordcount/WordCountReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/transactionsexample/hadoop/MapOnlyMapper.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/transactionsexample/hadoop/SingleRowRetrievalMapper.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/HadoopMain/src/com/zee/transactionsexample/hadoop/MapOnlyMapperNext.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/Requirement</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionCombiner.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/Driver.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/transactionsexample/hadoop/Driver.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionReducer.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionMapper.java</file>
         </group>
     </open-files>
 </project-private>
