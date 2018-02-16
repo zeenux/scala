@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/hadoop/writable/TransactionReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/hadoop/writable/Transaction.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/hadoop/writable/TransactionMapper.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/Requirement</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionCombiner.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionReducer.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionMapper.java</file>
         </group>
     </open-files>
 </project-private>
