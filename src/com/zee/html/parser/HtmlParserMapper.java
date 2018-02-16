@@ -14,12 +14,14 @@ import java.io.*;
 public class HtmlParserMapper extends Mapper<LongWritable, Text,Text,IntWritable> {
     
     private IntWritable one=new IntWritable(1);
+    private Text word=new Text();
     @Override
     public void map(LongWritable offset, Text record,Context context) throws IOException, InterruptedException{
         String [] lineSplits=record.toString().split(" ");
         
         for(String s: lineSplits){
-            context.write(new Text(s), one);
+            word.set(s);
+            context.write(word, one);
         }
         
     }

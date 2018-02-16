@@ -12,6 +12,7 @@ import org.apache.hadoop.conf.*;
 import org.apache.hadoop.util.*;
 import org.apache.hadoop.mapreduce.lib.input.*;
 import org.apache.hadoop.mapreduce.lib.output.*;
+import org.jsoup.*;
 /**
  *
  * @author zeenux
@@ -33,7 +34,7 @@ public class HtmlParserDriver extends Configured implements Tool {
         job.setNumReduceTasks(2);
         
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(Text.class);
+        job.setMapOutputValueClass(IntWritable.class);
         
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
@@ -41,7 +42,7 @@ public class HtmlParserDriver extends Configured implements Tool {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
         
-        FileInputFormat.addInputPath(job, new Path("/home/zeenux/DATASETS/Transactions.csv"));
+        FileInputFormat.addInputPath(job, new Path("/home/zeenux/DATASETS/Htmldata.txt"));
         double rnd=Math.random();
         FileOutputFormat.setOutputPath(job, new Path("/home/zeenux/op/FILE_"+rnd));
         return job.waitForCompletion(true)?0:1;

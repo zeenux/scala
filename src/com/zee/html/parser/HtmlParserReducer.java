@@ -11,15 +11,17 @@ import java.io.*;
  *
  * @author zeenux
  */
-public class HtmlParserReducer extends Reducer<Text,IntWritable,IntWritable,Text> {
+public class HtmlParserReducer extends Reducer<Text,IntWritable,Text,IntWritable> {
     
     public int count;
-    public void reduce(Text value, Iterable<Text> records, Context context) throws IOException, InterruptedException{
-        
-        for(Text r:records){
-            count++;
-            context.write(new IntWritable(count), r);
-        }
-        
+    @Override
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException{
+        System.out.println(key.toString());
+        int sum = 0;
+      for (IntWritable value : values) {
+        sum += value.get();
+      }
+
+      context.write(key, new IntWritable(sum));
     }
 }
