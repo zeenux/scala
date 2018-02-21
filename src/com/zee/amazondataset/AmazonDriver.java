@@ -11,6 +11,8 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.util.*;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 /**
  *
@@ -30,12 +32,14 @@ public class AmazonDriver extends Configured implements Tool {
         job.setMapperClass(AmazonMapper.class);
         job.setCombinerClass(AmazonReducer.class);
         job.setReducerClass(AmazonReducer.class);
-        
-        job.setMapOutputKeyClass(Text.class);
+        //<LongWritable,Text,LongWritable,AmazonRecord>
+        job.setMapOutputKeyClass(LongWritable.class);
         job.setMapOutputValueClass(AmazonRecord.class);
+        
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(AmazonRecord.class);
-        
+        job.setInputFormatClass(TextInputFormat.class);
+        job.setOutputFormatClass(TextOutputFormat.class);
         //job.setMapOutputKeyClass(theClass);
         //job.setNumReduceTasks(2);
         

@@ -9,67 +9,60 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 import org.apache.hadoop.io.Writable;
-
+import org.apache.hadoop.io.*;
 /**
  *
  * @author zeenux
  */
 public class AmazonRecord implements Writable {
     public static int bookCount=0;
-    private Long id;
-    private String title;
+    private Text asin;
+    private Text title;
 
-    public AmazonRecord(Long id, String title){
+    public AmazonRecord(String t, String asin){
         bookCount++;
-        this.id=Long.valueOf(bookCount);
-        this.title=title;
-        
+        setTitle(t);
+        setAsin(asin);
         
     }
+    public void setAsin(String a){
+        this.asin=new Text(a);
+    }
+    public String getAsin(){
+        return asin.toString();
+    }
     public AmazonRecord(){
-        this.id=0L;
-        this.title=null;
+       // bookCount++;
+        this.title=new Text("");
+        this.asin=new Text("");
     }
     @Override
     public void write(DataOutput out) throws IOException {
-        out.writeLong(this.getId());
-        out.writeChars(this.title);
+       title.write(out);
+       asin.write(out);
+        
     }
 
     @Override
     public void readFields(DataInput in) throws IOException {
-        this.title=in.readLine();
-        this.id=Long.valueOf(+bookCount);
+        title.readFields(in);
+        asin.readFields(in);
     }
 
-    /**
-     * @return the id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the title
-     */
     public String getTitle() {
-        return title;
+        
+        return title.toString();
     }
 
     /**
      * @param title the title to set
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String t) {
+        this.title=new Text(t);
     }
+    @Override
     public String toString(){
-        return this.getId()+":"+this.getTitle();
+        System.out.println("Title is "+title.toString());
+        return title.toString();
     }
 }

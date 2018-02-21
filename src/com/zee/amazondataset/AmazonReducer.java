@@ -11,24 +11,28 @@ import java.io.*;
  *
  * @author zeenux
  */
-public class AmazonReducer extends Reducer<Text,AmazonRecord,Text,AmazonRecord> {
+public class AmazonReducer extends Reducer<LongWritable,AmazonRecord,LongWritable,AmazonRecord> {
     
-    String title="";
-    int count=0;
+    
     @Override
-    public void reduce(Text tit, Iterable<AmazonRecord> records, Context context) throws IOException, InterruptedException{
-        
+    public void reduce(LongWritable tit, Iterable<AmazonRecord> records, Context context) throws IOException, InterruptedException{
+      String title="";
+      String asin="";
+        int count=0;
+      
         for(AmazonRecord ar:records){
-             System.out.println("Getting Title in Reducer "+ar.getTitle());
-            if(ar.getTitle().length()!=7)
-            {
+             
+            
                 title=ar.getTitle();
+                asin=ar.getAsin();
                 count++;
                 
-            }
+            context.write(new LongWritable(1), new AmazonRecord(title,asin));
             
             
         }
-        context.write(new Text(""), new AmazonRecord(Long.MIN_VALUE,title));
+        //System.out.println(count+" "+ new AmazonRecord(title).toString());
+        
+        
     }
 }

@@ -13,25 +13,30 @@ import java.io.*;
  *
  * @author zeenux
  */
-public class AmazonMapper extends Mapper<LongWritable,Text,Text,AmazonRecord> {
+public class AmazonMapper extends Mapper<LongWritable,Text,LongWritable,AmazonRecord> {
     
+    LongWritable one=new LongWritable(1);
     @Override
     public void map(LongWritable key, Text value, Context context)throws IOException, InterruptedException{
-       // System.out.println("*******");
-      //  System.out.println(value.toString());
-      //  System.out.println("*******");
+       
         String line=value.toString();//.split(" ");
         
-        
-        //myLine.stream().filter(c->c.contains("title")).forEach(System.out::println);
+        String title="";
+        String asin="";
+       
         
             if(line.contains("title")){
                 String [] tmp=line.split(":");
-                context.write(new Text("Book Title"), new AmazonRecord(1L,tmp[1]));
-                System.out.println("Value of Tmp is "+tmp[1]);
+                title=tmp[1];
+               
             }
-        
-        //System.out.println("---KEY-----"+key+"--VALUE----"+value);
+            else if(line.contains("ASIN"))
+            {
+                String [] a=line.split(":");
+                asin=a[1];
+            }
+        context.write(one, new AmazonRecord(title,asin));
+       
     }
     
 }
