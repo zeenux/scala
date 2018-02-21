@@ -10,6 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.util.*;
 import org.apache.hadoop.fs.*;
+import org.apache.hadoop.io.*;
 
 /**
  *
@@ -27,8 +28,16 @@ public class AmazonDriver extends Configured implements Tool {
         Job job=Job.getInstance(cnf,"Amazon DataSet");
         job.setJarByClass(AmazonDriver.class);
         job.setMapperClass(AmazonMapper.class);
+        job.setCombinerClass(AmazonReducer.class);
+        job.setReducerClass(AmazonReducer.class);
+        
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(AmazonRecord.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(AmazonRecord.class);
+        
         //job.setMapOutputKeyClass(theClass);
-        job.setNumReduceTasks(0);
+        //job.setNumReduceTasks(2);
         
         FileInputFormat.addInputPath(job, new Path("/home/zeenux/DATASETS/amazon-meta-subset.txt"));
         double rnd=Math.random();

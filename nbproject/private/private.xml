@@ -3,18 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/html/parser/HtmlParse.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/CustomMapper.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/latest/Transaction.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/hadoop/writable/TransactionReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/nbproject/private/private.xml</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/hadoop/writable/Transaction.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/latest/TransactionDriver.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/latest/TransactionReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/CustomReducer.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/CustomWritableDriver.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/hadoop/writable/TransactionMapper.java</file>
-            <file>file:/home/zeenux/NetBeansProjects/hadoop/src/com/zee/customwritable/latest/TransactionMapper.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionCombiner.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/html/parser/HtmlParserReducer.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/Driver.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/html/parser/HtmlParserDriver.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/amazondataset/AmazonReducer.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/amazondataset/Sampledata.txt</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/customrecordreader/hadoop/CustomFileInputFormat.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/amazondataset/AmazonMapper.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/Requirement</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/html/parser/HtmlParserMapper.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionReducer.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/amazondataset/AmazonDriver.java</file>
+            <file>file:/home/zeenux/NetBeansProjects/git/hadoop/src/com/zee/mapreduce/mapreducecombiner/TransactionMapper.java</file>
         </group>
     </open-files>
 </project-private>
