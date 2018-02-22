@@ -8,6 +8,10 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>HadoopMain</name>
             <source-roots>
+                <root id="src.sources.dir"/>
+                <root id="src.sources2.dir"/>
+                <root id="src.sources3.dir"/>
+                <root id="src.sources4.dir"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>
