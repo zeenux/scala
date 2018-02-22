@@ -26,7 +26,7 @@ public class AmazonReducer extends Reducer<LongWritable,AmazonRecord,LongWritabl
                 title=ar.getTitle();
                 asin=ar.getAsin();
                 count++;
-                
+                System.out.println("ASIN IS "+asin);
             context.write(new LongWritable(1), new AmazonRecord(title,asin));
             
             

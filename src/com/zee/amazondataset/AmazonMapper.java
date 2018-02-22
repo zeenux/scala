@@ -24,13 +24,14 @@ public class AmazonMapper extends Mapper<LongWritable,Text,LongWritable,AmazonRe
         String title="";
         String asin="";
        
+        List<String> ar=Arrays.asList(line);
         
             if(line.contains("title")){
                 String [] tmp=line.split(":");
                 title=tmp[1];
                
             }
-            else if(line.contains("ASIN"))
+            if(line.contains("ASIN"))
             {
                 String [] a=line.split(":");
                 asin=a[1];

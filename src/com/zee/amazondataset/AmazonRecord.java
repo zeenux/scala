@@ -62,7 +62,7 @@ public class AmazonRecord implements Writable {
     }
     @Override
     public String toString(){
-        System.out.println("Title is "+title.toString());
-        return title.toString();
+        
+        return title.toString()+asin.toString();
     }
 }
