@@ -1,0 +1,15 @@
+Input Data
+TransactionID	Date	Product	UnitPrice	CardType	CardNumber	Quantity	
+CustomerDetails	SupplierDetails	Category	Details
+
+Problem Statement: 
+
+For each CardType find total price, Max Qty, Max Unit Price, Average Price
+
+Output
+CardType, TotalPrice, MinQty, MaxUnitPrice, AvgPrice. 
+
+TODO:
+
+Mapper, combiner, Reducer, Driver.. 
+
