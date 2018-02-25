@@ -11,16 +11,18 @@ import java.io.*;
  *
  * @author zeenux
  */
-public class AmazonReducer extends Reducer<LongWritable,AmazonRecord,LongWritable,AmazonRecord> {
+public class AmazonReducer extends Reducer<LongWritable,NullWritable,LongWritable,NullWritable> {
     
     
     @Override
-    public void reduce(LongWritable tit, Iterable<AmazonRecord> records, Context context) throws IOException, InterruptedException{
+    public void reduce(LongWritable tit, Iterable<NullWritable> records, Context context) throws IOException, InterruptedException{
       String title="";
       String asin="";
         int count=0;
-      
-        for(AmazonRecord ar:records){
+      for(NullWritable n:records){
+          context.write(tit, n);
+      }
+      /*  for(AmazonRecord ar:records){
              
             
                 title=ar.getTitle();
@@ -28,9 +30,9 @@ public class AmazonReducer extends Reducer<LongWritable,AmazonRecord,LongWritabl
                 count++;
                 System.out.println("ASIN IS "+asin);
             context.write(new LongWritable(1), new AmazonRecord(title,asin));
+            */
             
-            
-        }
+       // }
         //System.out.println(count+" "+ new AmazonRecord(title).toString());
         
         
