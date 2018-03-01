@@ -86,7 +86,7 @@ public class AmazonRecordReader extends RecordReader<LongWritable,Text> {
             // Reset "start" to "start + line offset"
             start += in.readLine(dummy, 0,(int) Math.min( (long) Integer.MAX_VALUE, end - start));
         }
- 
+        
         // Position is the actual start
         this.pos = start;
  

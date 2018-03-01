@@ -13,12 +13,14 @@ import java.io.*;
  *
  * @author zeenux
  */
-public class AmazonMapper extends Mapper<LongWritable,Text,LongWritable,AmazonRecord> {
+public class AmazonMapper extends Mapper<LongWritable,Text,Text,NullWritable> {
     
     LongWritable one=new LongWritable(1);
+    private Text out = new Text();
     @Override
     public void map(LongWritable key, Text value, Context context)throws IOException, InterruptedException{
-       
+           System.out.println(value.toString());
+        /*
         String line=value.toString();//.split(" ");
         
         String title="";
@@ -36,8 +38,9 @@ public class AmazonMapper extends Mapper<LongWritable,Text,LongWritable,AmazonRe
                 String [] a=line.split(":");
                 asin=a[1];
             }
-        context.write(one, new AmazonRecord(title,asin));
-       
+        context.write(one, NullWritable.get());*/
+        //out.set(key + " -------------\n" + value);
+        //context.write(out, NullWritable.get());
     }
     
 }

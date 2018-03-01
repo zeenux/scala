@@ -17,10 +17,12 @@ import java.io.IOException;
  * @author zeenux
  */
 public class AmazonInputFormat extends FileInputFormat<Text, Text> {
+    String data=new String();
     public RecordReader<Text, Text> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
         return new AmazonInputFormatClass();
     }
     public class AmazonInputFormatClass extends RecordReader<Text, Text> {
+        //private FileRecordReader fileRecordReader=null;
         private LineRecordReader lineRecordReader = null;
         private Text key = null;
         private Text value = null;
@@ -68,11 +70,19 @@ public class AmazonInputFormat extends FileInputFormat<Text, Text> {
 
             // This is where you should implement your custom logic.
             Text line = lineRecordReader.getCurrentValue();
+            
             String str = line.toString();
+            System.out.println(str);
             String[] arr = str.split("\\t");
-
-            key = new Text(arr[1]);
-            value = new Text(arr[4]);
+            try{
+                key = new Text(arr[1]);
+                System.out.println(key);
+                value = new Text(arr[4]);
+                System.out.println(value);
+            }
+            catch(Exception ex){
+                System.out.println(ex.toString());
+            }
 
             return true;
         }
